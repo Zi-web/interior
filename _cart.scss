@@ -182,6 +182,7 @@
 }
 
 .cart-form__btn {
+    display: block;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
@@ -193,11 +194,46 @@
     color: #020202;
     background-color: #fff;
     margin: 0 auto;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
     &:hover {
         cursor: pointer;
-        color: #ffffff;
-        background-color: #020202;
+        /*color: #ffffff;*/
+        background-color: #F7F6F6;
+        transform: scale(1.05);
+    }
+    &:after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 200px;
+        margin-left: 60px;
+        background: rgba(255,255,255,.5);
+        box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.5);
+        position: absolute;
+        left: -40px;
+        top: -50px;
+        z-index: 1;
+        transform: rotate(45deg);
+        transition: all .1s;
+        animation-name: slideme;
+        animation-duration: 1.5s;
+        animation-delay: .08s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+
+}
+
+@keyframes slideme {
+    0% {
+        left:-30px; 
+        margin-left:0;
+    }
+    to {
+        left:110%; 
+        margin-left:80px;
     }
 }
 
