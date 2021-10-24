@@ -985,6 +985,7 @@ body {
 }
 
 .cart-form__btn {
+  display: block;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
@@ -996,14 +997,69 @@ body {
   color: #020202;
   background-color: #fff;
   margin: 0 auto;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .cart-form__btn:hover {
   cursor: pointer;
-  color: #ffffff;
-  background-color: #020202;
+  /*color: #ffffff;*/
+  background-color: #F7F6F6;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.cart-form__btn:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 200px;
+  margin-left: 60px;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: -40px;
+  top: -50px;
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  -webkit-animation-name: slideme;
+          animation-name: slideme;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: .08s;
+          animation-delay: .08s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes slideme {
+  0% {
+    left: -30px;
+    margin-left: 0;
+  }
+  to {
+    left: 110%;
+    margin-left: 80px;
+  }
+}
+
+@keyframes slideme {
+  0% {
+    left: -30px;
+    margin-left: 0;
+  }
+  to {
+    left: 110%;
+    margin-left: 80px;
+  }
 }
 
 .cart-form__input {
